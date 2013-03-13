@@ -16,7 +16,7 @@
 %-------------------------------------------------------------------------------
 %                required packages
 %-------------------------------------------------------------------------------
-
+\RequirePackage{fontawesome}
 
 %-------------------------------------------------------------------------------
 %                package options
@@ -38,11 +38,16 @@
 %\fi
 
 % symbols
-\renewcommand*{\mobilesymbol}{\marvosymbol{72}~}
-\renewcommand*{\phonesymbol}{\marvosymbol{84}~}
+% \renewcommand*{\mobilesymbol}{\marvosymbol{72}~}
+\renewcommand*{\mobilesymbol}{\iconMobilePhone{}~}
+% \renewcommand*{\phonesymbol}{\marvosymbol{84}~}
+\renewcommand*{\phonesymbol}{\iconPhone{}~}
 \renewcommand*{\faxsymbol}{\marvosymbol{117}~}
-\renewcommand*{\emailsymbol}{\marvosymbol{66}~}
-\renewcommand*{\homepagesymbol}{{\Large\marvosymbol{205}}~}
+% \renewcommand*{\emailsymbol}{\marvosymbol{66}~}
+\renewcommand*{\emailsymbol}{\iconEnvelope{}~}
+% \renewcommand*{\homepagesymbol}{{\Large\marvosymbol{205}}~}
+\renewcommand*{\homepagesymbol}{\iconHome{}~}
+\renewcommand*{\githubsymbol}{\iconGithub{}~}
 
 
 %-------------------------------------------------------------------------------
@@ -116,6 +121,7 @@
       \ifthenelse{\isundefined{\@fax}}{}{\makenewline\faxsymbol\@fax}%
       \ifthenelse{\isundefined{\@email}}{}{\makenewline\emailsymbol\emaillink{\@email}}%
       \ifthenelse{\isundefined{\@homepage}}{}{\makenewline\homepagesymbol\httplink{\@homepage}}%
+      \ifthenelse{\isundefined{\@github}}{}{\makenewline\githubsymbol\githublink{\@github}}%
       \ifthenelse{\isundefined{\@extrainfo}}{}{\makenewline\@extrainfo}%
     \end{tabular}
   }%
@@ -269,6 +275,7 @@
       \ifthenelse{\isundefined{\@fax}}{}{\makenewline\faxsymbol\@fax}%
       \ifthenelse{\isundefined{\@email}}{}{\makenewline\emailsymbol\emaillink{\@email}}%
       \ifthenelse{\isundefined{\@homepage}}{}{\makenewline\homepagesymbol\httplink{\@homepage}}%
+      \ifthenelse{\isundefined{\@github}}{}{\makenewline\githubsymbol\githublink{\@github}}%
       \ifthenelse{\isundefined{\@extrainfo}}{}{\makenewline\@extrainfo}}%
     \end{minipage}\\[1em]
   % recipient block

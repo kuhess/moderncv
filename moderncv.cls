@@ -125,7 +125,7 @@
 \urlstyle{tt}
 \AtEndPreamble{
   \pagenumbering{arabic}% has to be issued before loading hyperref, as to set \thepage and hence to avoid hyperref issuing a warning and setting pdfpagelabels=false
-  \RequirePackage[unicode]{hyperref}% unicode is required for unicode pdf metadata
+  \RequirePackage[unicode, pdfencoding=auto]{hyperref}% unicode is required for unicode pdf metadata
   \hypersetup{
     breaklinks,
     baseurl       = http://,
@@ -253,6 +253,9 @@
 % defines one's home page (optional)
 % usage: \homepage{<url>}
 \newcommand*{\homepage}[1]{\def\@homepage{#1}}
+% defines one's github profile (optional)
+% usage: \github{<name>}
+\newcommand*{\github}[1]{\def\@github{#1}}
 % defines additional personal information (optional)
 % usage: \extrainfo{<text>}
 \newcommand*{\extrainfo}[1]{\def\@extrainfo{#1}}
@@ -282,6 +285,7 @@
 \newcommand*{\faxsymbol}{}
 \newcommand*{\emailsymbol}{}
 \newcommand*{\homepagesymbol}{}
+\newcommand*{\githubsymbol}{}
 
 % fonts
 \AtBeginDocument{\normalfont\color{color0}}
@@ -414,6 +418,13 @@
   \ifthenelse{\equal{#1}{}}%
     {\href{mailto:#2}{#2}}%
     {\href{mailto:#2}{#1}}}
+
+% makes a github profile hyperlink
+% usage: \githublink[optional text]{link}
+\newcommand*{\githublink}[2][]{%
+  \ifthenelse{\equal{#1}{}}%
+    {\href{http://github.com/#2}{#2}}%
+    {\href{http://github.com/#2}{#1}}}
 
 % cvcolumns environment, where every column is created through \cvcolumn
 % usage: \begin{cvcolumns}
