@@ -1,3 +1,40 @@
+## Moderncv
+
+Fork of the LaTeX moderncv package to support new features (font-awesome icons, github profile)
+
+### Installation
+
+This new package depends on `fontawesome.sty` (see https://gist.github.com/kuhess/5205073).
+
+You can install the package in your local LaTeX package tree.
+
+On Mac, copy all the files to `~/Library/texmf/tex/latex/moderncv`
+
+### Usage
+
+To use the package, with the new features:
+```LaTeX
+\usepackage{moderncv}
+\moderncvstyle{classic}
+```
+
+Now, you can use a new command in your moderncv classic:
+```LaTeX
+\github{kuhess}
+```
+
+You can also use Font-Awesome symbols:
+```LaTeX
+\iconMobilePhone{}
+```
+
+Finally, you can compile with:
+```bash
+xelatex resume.tex
+```
+
+
+### Original README
 moderncv -- a modern curriculum vitae class
 
 Moderncv provides a documentclass for typesetting modern curriculum vitaes in
